@@ -6,7 +6,7 @@ public class CameraLook : MonoBehaviour
 {
     public bool isCursorHidden = true;
     public float minPitch = -80f, maxPitch = 80f;
-    public Vector2 speed = new Vector2(120f, 120f); //speed in degrees (per second)
+    public Vector2 speed = new Vector2(100f, 120f); //speed in degrees (per second)
 
     private Vector2 euler; //current euler rotation (representation of how things are oriented in 3d space)
     
@@ -31,6 +31,7 @@ public class CameraLook : MonoBehaviour
         euler.y += Input.GetAxis("Mouse X") * speed.x * Time.deltaTime; // time it take to go from one frame to antoher - normalises this (evens out)
         euler.x -= Input.GetAxis("Mouse Y") * speed.y * Time.deltaTime;
         //clamp the camera on pitch
+        euler.x = Mathf.Clamp(euler.x, minPitch, maxPitch);
         //apply the euler to the player and Camera seperately
         transform.parent.localEulerAngles = new Vector3(0, euler.y, 0); //parent is the player as camera is in the player which the script is attached to
         transform.localEulerAngles = new Vector3(euler.x, 0, 0);

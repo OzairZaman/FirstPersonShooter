@@ -1314,6 +1314,11 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5626975197535519015, guid: 249c0cb6a7102a84bac8f2ea1b18e7ed,
+        type: 3}
+      propertyPath: dashTime
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8780399072112157484, guid: 249c0cb6a7102a84bac8f2ea1b18e7ed,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -15,7 +15,7 @@ public class Seek : SteeringBehavior
         if (target)
         {
             //  SET desiredForce to target - current (position)
-            Vector3 desiredForce = target.position = transform.position;
+            Vector3 desiredForce = target.position - transform.position;
             //  SET force to desiredForce normalized x weighting
             force += desiredForce.normalized * weight;
         }
